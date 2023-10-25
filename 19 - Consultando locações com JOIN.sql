@@ -1,0 +1,16 @@
+-- SQLite
+
+-- Consultando locações com JOIN
+
+SELECT * FROM LOCATIONS;
+
+SELECT  L.ID, 
+        L.START_DATE,
+        L.END_DATE,
+        L.TOTAL,
+        C.NAME AS 'CUSTOMER_NAME',
+        CA.NAME AS 'CAR_NAME',
+        E.NAME AS 'EMPLOYEE_NAME' FROM LOCATIONS AS L
+        JOIN CUSTOMERS AS C ON (C.ID = L.CUSTOMER_ID)
+        JOIN CARS AS CA ON (CA.ID = L.CAR_ID)
+        JOIN EMPLOYEES AS E ON (E.ID = L.EMPLOYEE_ID);

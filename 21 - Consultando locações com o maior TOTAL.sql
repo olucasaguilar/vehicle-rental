@@ -1,0 +1,8 @@
+-- SQLite
+
+-- Consultando locações com o maior TOTAL
+
+SELECT * FROM LOCATIONS;
+
+SELECT * FROM LOCATIONS 
+    WHERE TOTAL = (SELECT MAX(TOTAL) FROM LOCATIONS);
